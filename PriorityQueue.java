@@ -1,3 +1,12 @@
+//Referencia de la clase PriorityQueue
+// Libro (c) 1998,2001 duane a. bailey
+
+/*
+ * </pre>
+ * @version $Id: PriorityQueue.java 34 2007-08-09 14:43:44Z bailey $
+ * @author, 2001 duane a. bailey
+ */
+
 public interface PriorityQueue<E extends Comparable<E>>
 {
 	public E getFirst();

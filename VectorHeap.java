@@ -1,5 +1,16 @@
+//Referencia de la clase VectorHeap
+// Libro (c) 1998,2001 duane a. bailey
+
+
 //importando clases
 import java.util.*;
+
+
+/*
+ * </pre>
+ * @version $Id: VectorHeap.java 34 2007-08-09 14:43:44Z bailey $
+ * @author, 2001 duane a. bailey
+ */
 
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 {
