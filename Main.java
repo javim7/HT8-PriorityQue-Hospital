@@ -115,19 +115,28 @@ public class Main {
         //opcion2, ver lista de espera
         if(opcion==2) {
 
+            VectorHeap<Pacientes> Pacientes2 = new VectorHeap<Pacientes>();
+            //pasando toda la info de pacientes a pacientes dos para poder modificarla
+            for (paciente: Pacientes) {
+
+                Pacientes2.add(paciente);
+
+            }
+
             //instanciando el paciente
             Pacientes siguientePaciente;
             System.out.println("\n");
 
             //if para ver si el vector esta vacio o no
-            if(!Pacientes.isEmpty()) {
+            if(!Pacientes2.isEmpty()) {
 
                 //for para poder imprimir un listado completo de los pacientes en espera
-                int tam = Pacientes.size();
+                int tam = Pacientes2.size();
                 boolean sigue = true;
                 int contador = 0;
                 while(sigue){
 
+                    //sumandole al contador
                     contador++;
 
                     //viendo quien es el primer pacientes
@@ -140,7 +149,9 @@ public class Main {
                     System.out.println("\t Nombre:      "+siguientePaciente.getPrioridadPaciente());
 
                     //sacando del vector al primer paciente para poder ver al resto
-                   // siguientePaciente = Pacientes.remove();
+                    siguientePaciente = Pacientes2.remove();
+
+                    //if para poder parar el contador
                    if(contador == tam) {
                        sigue = false;
                    }
