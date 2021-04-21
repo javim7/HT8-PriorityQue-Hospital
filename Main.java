@@ -117,11 +117,7 @@ public class Main {
 
             VectorHeap<Pacientes> Pacientes2 = new VectorHeap<Pacientes>();
             //pasando toda la info de pacientes a pacientes dos para poder modificarla
-            for (paciente: Pacientes) {
-
-                Pacientes2.add(paciente);
-
-            }
+            
 
             //instanciando el paciente
             Pacientes siguientePaciente;
