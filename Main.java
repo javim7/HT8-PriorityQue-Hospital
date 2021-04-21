@@ -63,7 +63,7 @@ public class Main {
             //creando menu
             System.out.println("\nMenu");
             System.out.println("(1) Atender Siguiente Paciente");
-            System.out.println("(2) Ver lista de espera");
+            System.out.println("(2) Ver proximo en lista de espera");
             System.out.println("(3) Salir del programa");
 
             int opcion = 0;
@@ -99,11 +99,14 @@ public class Main {
 
             //if para ver si el vector esta vacio o no
             if(!Pacientes.isEmpty()) {
+                //eliminando al pciente del heap
                 siguientePaciente = Pacientes.remove();
+
+                //sacando info del paciente
                 System.out.println("\nEl doctor ha atendido al paciente : ");
                 System.out.println("\t Nombre:       "+siguientePaciente.getNombre());
                 System.out.println("\t Enfermedad:  "+siguientePaciente.getSintoma());
-                System.out.println("\t Nombre:      "+siguientePaciente.getPrioridadPaciente());
+                System.out.println("\t Codigo:      "+siguientePaciente.getPrioridadPaciente());
 
                 //else por si el vector esta vacio
             }else {
@@ -115,46 +118,22 @@ public class Main {
         //opcion2, ver lista de espera
         if(opcion==2) {
 
-            VectorHeap<Pacientes> Pacientes2 = new VectorHeap<Pacientes>();
-            //pasando toda la info de pacientes a pacientes dos para poder modificarla
-            
+            //instanciando la clase pacientes
+            Pacientes siguientePatient;
 
-            //instanciando el paciente
-            Pacientes siguientePaciente;
-            System.out.println("\n");
+            //viendo si el heap esta vacio o no
+            if(!Pacientes.isEmpty()) {
 
-            //if para ver si el vector esta vacio o no
-            if(!Pacientes2.isEmpty()) {
+                //sacando al primer paciente en el heap
+                siguientePatient = Pacientes.getFirst();
 
-                //for para poder imprimir un listado completo de los pacientes en espera
-                int tam = Pacientes2.size();
-                boolean sigue = true;
-                int contador = 0;
-                while(sigue){
+                //imprimiendo ifno del pacientes
+                System.out.println("El siguiente paciente para atender es : ");
+                System.out.println("\t Nombre:       "+siguientePatient.getNombre());
+                System.out.println("\t Enfermedad:  "+siguientePatient.getSintoma());
+                System.out.println("\t Codigo:      "+siguientePatient.getPrioridadPaciente());
 
-                    //sumandole al contador
-                    contador++;
-
-                    //viendo quien es el primer pacientes
-                    siguientePaciente = Pacientes.getFirst();
-
-                    //imprimiendo la informacion de los pacientes
-                    System.out.println("El siguiente paciente para atender es : ");
-                    System.out.println("\t Nombre:       "+siguientePaciente.getNombre());
-                    System.out.println("\t Enfermedad:  "+siguientePaciente.getSintoma());
-                    System.out.println("\t Nombre:      "+siguientePaciente.getPrioridadPaciente());
-
-                    //sacando del vector al primer paciente para poder ver al resto
-                    siguientePaciente = Pacientes2.remove();
-
-                    //if para poder parar el contador
-                   if(contador == tam) {
-                       sigue = false;
-                   }
-
-                }
-
-                //else por si el vector esta vacio
+                //else por si la lista esta vacia
             }else {
                 System.out.println("No hay ningun paciente en la lista de espera!");
             }
