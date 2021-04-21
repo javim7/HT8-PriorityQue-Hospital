@@ -126,19 +126,22 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
     @Override
 	//retornar primer elemtno
     public E getFirst() {
-        return data.firstElement();
+
+		return data.firstElement();
     }
 
     @Override
 	//ver si la queue esta vaica o no
     public boolean isEmpty() {
-        return data.isEmpty();
+
+		return data.isEmpty();
     }
 
     @Override
 	//ver tamano del vector
     public int size() {
-        return data.size();
+
+		return data.size();
     }
 
     @Override
